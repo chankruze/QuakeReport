@@ -3,9 +3,9 @@ package in.geekofia.quakereport;
 public class Quake {
     private double mMagnitude;
     private String mLocation;
-    private String mDate;
+    private long mDate;
 
-    public Quake(double magnitude, String location, String date){
+    public Quake(double magnitude, String location, long date){
         mMagnitude = magnitude;
         mLocation = location;
         mDate = date;
@@ -19,7 +19,7 @@ public class Quake {
         return mLocation;
     }
 
-    public String getDate(){
+    public long getDate(){
         return mDate;
     }
 }

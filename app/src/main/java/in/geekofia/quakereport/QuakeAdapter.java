@@ -7,7 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class QuakeAdapter extends ArrayAdapter<Quake> {
 
@@ -38,8 +40,13 @@ public class QuakeAdapter extends ArrayAdapter<Quake> {
         TextView location = (TextView) listItemView.findViewById(R.id.location);
         location.setText(currentQuake.getLocation());
 
+        // Handle the date & time
+        Date dateObject = new Date(currentQuake.getDate());
+        SimpleDateFormat dateFormatter = new SimpleDateFormat("MMM DD, yyyy");
+        String dateToDisplay = dateFormatter.format(dateObject);
+
         TextView date = (TextView) listItemView.findViewById(R.id.date);
-        date.setText(currentQuake.getDate());
+        date.setText(dateToDisplay);
 
         return listItemView;
     }
