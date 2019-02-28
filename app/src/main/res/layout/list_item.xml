@@ -10,7 +10,7 @@
         android:layout_width="44dp"
         android:layout_height="44dp"
         android:background="@drawable/magnitude_circle"
-        android:gravity="center_vertical|center_horizontal"
+        android:gravity="center"
         android:textColor="@android:color/white"
         android:textSize="18dp"
         tools:text="8.9" />
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="top|start"
+            android:gravity="bottom|start"
             android:textAllCaps="true"
             android:textColor="@color/textColorEarthquakeDetails"
             tools:text="88km N of" />
@@ -41,11 +41,13 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/locationOffset"
             android:layout_weight="1"
-            android:gravity="bottom|start"
+            android:gravity="top|start"
             android:textAllCaps="false"
             android:textColor="@color/textColorEarthquakeLocation"
             android:textSize="16dp"
-            tools:text="San Francisco, CA" />
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="Farallon de Pajaros, Northern Mariana Islands" />
     </RelativeLayout>
 
     <RelativeLayout
