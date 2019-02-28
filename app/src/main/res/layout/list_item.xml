@@ -42,7 +42,7 @@
             android:gravity="bottom|start"
             android:textColor="@color/textColorEarthquakeLocation"
             android:textSize="16dp"
-            android:textAllCaps="true"
+            android:textAllCaps="false"
             tools:text="San Francisco, CA"  />
     </RelativeLayout>
 
