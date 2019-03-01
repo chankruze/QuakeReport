@@ -24,6 +24,20 @@
         style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true" />
+
+    <Button
+        android:id="@+id/retryButton"
+        android:layout_below="@+id/empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="16dp"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textAllCaps="true"
+        android:text="@string/retryButtonText"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimary"
+        android:visibility="gone"/>
 
 </RelativeLayout>
