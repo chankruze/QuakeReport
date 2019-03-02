@@ -5,16 +5,23 @@
     android:orientation="horizontal"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/magnitude"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
-        android:background="@drawable/magnitude_circle"
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.6"
         android:gravity="center"
-        android:textColor="@android:color/white"
-        android:textSize="18dp"
-        tools:text="8.9" />
+        android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/magnitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/magnitude_circle"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            tools:text="8.9" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="0dp"
