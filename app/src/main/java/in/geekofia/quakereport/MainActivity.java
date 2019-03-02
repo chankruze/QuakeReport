@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -158,9 +159,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         View loadingIndicator = findViewById(R.id.loading_indicator);
         loadingIndicator.setVisibility(View.GONE);
 
-        // Set empty state text to display "No earthquakes found."
-        mEmptyStateTextView.setText(R.string.no_earthquakes);
-
+        if(!isConnected()){
+            mEmptyStateTextView.setText(R.string.no_internet_connection);
+        }else {
+            mEmptyStateTextView.setText(R.string.no_earthquakes);
+        }
         // Clear the adapter of previous earthquake data
         mAdapter.clear();
 
@@ -194,5 +197,18 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        if (!isConnected()){
+            mAdapter.clear();
+            mRetryButton.setVisibility(View.VISIBLE);
+        }else{
+            mEmptyStateTextView.setText("Refreshing .....");
+            mRetryButton.setVisibility(View.GONE);
+        }
+    }
 }
+
 
